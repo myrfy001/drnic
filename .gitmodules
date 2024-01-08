@@ -1,0 +1,12 @@
+[submodule "libs/blue-wrapper"]
+	path = libs/blue-wrapper
+	url = https://github.com/wengwz/blue-wrapper.git
+[submodule "libs/blue-ethernet"]
+	path = libs/blue-ethernet
+	url = https://github.com/wengwz/blue-ethernet.git
+[submodule "libs/blue-rdma"]
+	path = libs/blue-rdma
+	url = https://github.com/myrfy001/blue-rdma.git
+[submodule "libs/blue-crc"]
+	path = libs/blue-crc
+	url = https://github.com/wengwz/blue-crc.git

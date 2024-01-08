@@ -1,0 +1,29 @@
+TESTDIR ?= $(abspath ../test)
+LOGDIR ?= $(abspath ../tmp)
+
+TESTBENCHS = \
+			TestAddressTranslate.bsv \
+			TestRingbuf.bsv \
+			TestXdma.bsv \
+			TestTop.bsv
+
+TestTop.bsv                       = mkTestTop
+
+TestAddressTranslate.bsv     	  = mkTestBramCache \
+                                    mkTestTLB
+
+TestRingbuf.bsv                   = mkTestRingbuf
+
+TestXdma.bsv					  = mkTestGearbox \
+								    mkTestFakeXdma
+
+all: $(TESTBENCHS)
+
+%.bsv:
+	$(foreach testcase, $($@), $(shell cd $(TESTDIR) && make simulate TESTFILE=$@ TOPMODULE=$(testcase) > $(LOGDIR)/$@-$(testcase).log 2>&1))
+
+clean:
+	rm -f $(LOGDIR)/*.log
+
+.PHONY: all TESTBENCHS %.bsv clean
+.DEFAULT_GOAL := all
