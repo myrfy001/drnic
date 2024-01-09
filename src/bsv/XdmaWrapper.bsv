@@ -31,7 +31,7 @@ typedef struct {
     Bit#(2) _rsv;
     Bool completed;
     Bool stop;
-}XdmaDescBypCtl deriving(Bits);
+} XdmaDescBypCtl deriving(Bits);
 
 
 typedef struct {
@@ -43,7 +43,7 @@ typedef struct {
     Bool descStop;
     Bool descCplt;
     Bool busy;
-}XdmaChannelStatus deriving(Bits);
+} XdmaChannelStatus deriving(Bits);
 
 (* always_ready, always_enabled *)
 interface XdmaDescriptorBypass;

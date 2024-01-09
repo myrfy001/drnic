@@ -148,7 +148,7 @@ typedef struct {
     Bit#(4)     extraSegmentCnt;
     Bit#(6)     opCode;
     Bool        valid;
-}CmdQueueDescCommonHead deriving(Bits, FShow);
+} CmdQueueDescCommonHead deriving(Bits, FShow);
 
 typedef struct {
     Bit#(32)                reserved1;
@@ -157,7 +157,7 @@ typedef struct {
     Bit#(32)                pointedToSecondStageIndex;
     Bit#(64)                baseVA;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueReqDescUpdateFirstStagePGT deriving(Bits, FShow);
+} CmdQueueReqDescUpdateFirstStagePGT deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64)                reserved1;
@@ -165,14 +165,14 @@ typedef struct {
     Bit#(32)                startIndex;
     Bit#(64)                dmaAddr;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueReqDescUpdateSecondStagePGT deriving(Bits, FShow);
+} CmdQueueReqDescUpdateSecondStagePGT deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64)                reserved1;
     Bit#(64)                reserved2;
     Bit#(64)                reserved3;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueRespDescUpdatePGT deriving(Bits, FShow);
+} CmdQueueRespDescUpdatePGT deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64)                reserved1;
@@ -181,7 +181,7 @@ typedef struct {
     Bool                    isAlloc;
     HandlerPD               pdHandler;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueReqDescPdManagement deriving(Bits, FShow);
+} CmdQueueReqDescPdManagement deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64)                reserved1;
@@ -189,7 +189,7 @@ typedef struct {
     HandlerPD               pdHandler;
     Bit#(32)                reserved3;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueRespDescPdManagement deriving(Bits, FShow);
+} CmdQueueRespDescPdManagement deriving(Bits, FShow);
 
 typedef struct {
     Bit#(32)                reserved1;
@@ -201,7 +201,7 @@ typedef struct {
     Bool                    isAlloc;
     HandlerPD               pdHandler;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueReqDescMrManagementSeg0 deriving(Bits, FShow);
+} CmdQueueReqDescMrManagementSeg0 deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64) reserved1;
@@ -209,7 +209,7 @@ typedef struct {
     Bit#(64) reserved3;
     RKEY      rkey;
     LKEY      lkey;
-}CmdQueueReqDescMrManagementSeg1 deriving(Bits, FShow);
+} CmdQueueReqDescMrManagementSeg1 deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64)                reserved1;
@@ -217,7 +217,7 @@ typedef struct {
     RKEY                    rkey;
     LKEY                    lkey;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueRespDescMrManagement deriving(Bits, FShow);
+} CmdQueueRespDescMrManagement deriving(Bits, FShow);
 
 
 typedef struct {
@@ -233,7 +233,7 @@ typedef struct {
     QpReqType               qpReqType;
     HandlerPD               pdHandler;
     CmdQueueDescCommonHead  commonHeader;
-}CmdQueueReqDescQpManagementSeg0 deriving(Bits, FShow);
+} CmdQueueReqDescQpManagementSeg0 deriving(Bits, FShow);
 
 typedef struct {
     Bit#(16)                        reserved1;
@@ -260,7 +260,7 @@ typedef struct {
     PMTU                            pmtu;
     StateQP                         curQpState;
     StateQP                         qpState;
-}CmdQueueReqDescQpManagementSeg1 deriving(Bits, FShow);
+} CmdQueueReqDescQpManagementSeg1 deriving(Bits, FShow);
 
 typedef CmdQueueReqDescQpManagementSeg0 CmdQueueRespDescQpManagementSeg0;
 typedef CmdQueueReqDescQpManagementSeg1 CmdQueueRespDescQpManagementSeg1;
@@ -274,7 +274,7 @@ typedef struct {
     Bit#(2)         reserved2;
     WorkReqOpCode   opCode;
     Bool            valid;
-}SendQueueDescCommonHead deriving(Bits, FShow);
+} SendQueueDescCommonHead deriving(Bits, FShow);
 
 typedef struct {
     RKEY                        rkey;
@@ -282,7 +282,7 @@ typedef struct {
     ADDR                        raddr;
     ADDR                        laddr;
     SendQueueDescCommonHead     commonHeader;
-}SendQueueReqDescSeg0 deriving(Bits, FShow);
+} SendQueueReqDescSeg0 deriving(Bits, FShow);
 
 typedef struct {
     Bit#(64)        reserved1;
@@ -293,7 +293,7 @@ typedef struct {
     Bool            solicited;
     Bit#(2)         reserved5;
     WorkReqSendFlag flags;
-}SendQueueReqDescSeg1 deriving(Bits, FShow);
+} SendQueueReqDescSeg1 deriving(Bits, FShow);
 
 typedef struct {
     Length          len;
@@ -303,7 +303,7 @@ typedef struct {
     Bit#(2)         reserved2;
     WorkReqOpCode   opCode;
     Bool            valid;
-}RecvQueueDescCommonHead deriving(Bits, FShow);
+} RecvQueueDescCommonHead deriving(Bits, FShow);
 
 typedef struct {
     Bit#(8)                     reserved1;
@@ -312,7 +312,7 @@ typedef struct {
     Bit#(64)                    reserved2;
     ADDR                        laddr;
     RecvQueueDescCommonHead     commonHeader;
-}RecvQueueReqDesc deriving(Bits, FShow);
+} RecvQueueReqDesc deriving(Bits, FShow);
 
 
 
@@ -322,7 +322,7 @@ typedef struct {
     Bit#(4)         extraSegmentCnt;
     Bit#(6)         reserved2;
     Bool            valid;
-}CompQueueDescCommonHead deriving(Bits, FShow);
+} CompQueueDescCommonHead deriving(Bits, FShow);
 
 typedef struct {
     Bit#(40)                    reserved1;
@@ -336,4 +336,4 @@ typedef struct {
     WorkCompFlags               flags;
     WorkCompOpCode              opcode;
     CompQueueDescCommonHead     commonHeader;
-}CompQueueReqDesc deriving(Bits, FShow);
+} CompQueueReqDesc deriving(Bits, FShow);
